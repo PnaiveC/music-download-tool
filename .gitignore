@@ -1,0 +1,90 @@
+# 字节编译 / 优化 / DLL 文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C 扩展
+*.so
+
+# 发行版 / 打包
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 安装器日志
+pip-log.txt
+pip-delete-this-directory.txt
+
+# 翻译文件
+*.mo
+*.pot
+
+# 环境变量文件
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE 相关
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 项目特定忽略项
+# Cookie 文件（包含敏感的身份验证数据）
+cookies_*.txt
+
+# 下载的音乐文件
+downloads/
+music/
+*.mp3
+*.flac
+*.wav
+*.m4a
+
+# 日志文件
+logs/
+*.log
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+tests/
+
+# 操作系统生成的文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 编辑器备份文件
+*~
+.*.sw[op]
+*.bak
+*.orig
+
+config/local_settings.py
+.local
