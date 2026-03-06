@@ -11,8 +11,8 @@ import sys
 # 添加项目根目录到Python路径
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from core.multithread_downloader import MultithreadDownloader
-from core.qq_music_api import QQMusicAPI
+from core.downloaders.multithread_downloader import MultithreadDownloader
+from core.api.qq_music_api import QQMusicAPI
 from utils.logger import print_final_statistics
 
 def get_user_choice():
