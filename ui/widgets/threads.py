@@ -5,6 +5,7 @@
 
 from PyQt6.QtCore import QThread, QObject, pyqtSignal, pyqtSlot
 import yt_dlp
+import os
 from utils.logger import success_count, failure_count, reset_stats
 
 
@@ -156,9 +157,9 @@ class DownloadWorker(QObject):
 
     def run_download(self):
         try:
-            from core.downloader import MusicDownloader
-            from core.multithread_downloader import MultithreadDownloader
-            from core.qq_music_api import QQMusicAPI
+            from core.downloaders.downloader import MusicDownloader
+            from core.downloaders.multithread_downloader import MultithreadDownloader
+            from core.api.qq_music_api import QQMusicAPI
             from utils.logger import success_count, failure_count, reset_stats
             import os
 

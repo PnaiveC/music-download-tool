@@ -4,15 +4,27 @@ import json
 # 项目根目录
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# 日志配置
+LOG_CONFIG = {
+    'log_dir': os.path.join(BASE_DIR, "logs"),
+    'log_level': 'INFO',
+    'log_format': '%(asctime)s - %(levelname)s - %(message)s',
+    'max_bytes': 10 * 1024 * 1024,  # 10MB
+    'backup_count': 5
+}
+
 # QQ音乐下载配置
 DOWNLOAD_CONFIG = {
+    'target_dir': os.path.expanduser("~/Music"),  # 目标下载目录 - 为兼容旧代码添加
     'download_dir': os.path.expanduser("~/Music"),  # 默认下载目录
-    'cookie_path': './config/cookie.txt',  # Cookie文件路径
+    'cookie_path': os.path.join(BASE_DIR, "config", "cookie.txt"),  # Cookie文件路径 - 使用绝对路径
     'max_retries': 3,  # 最大重试次数
     'concurrent_limit': 5,  # 并发下载限制
     'min_delay': 1,  # 下载最小延迟（秒）
     'max_delay': 3,  # 下载最大延迟（秒）
-    'download_location': os.path.expanduser("~/Music")  # 新增：下载位置配置
+    'download_location': os.path.expanduser("~/Music"),  # 下载位置配置
+    'format': 'bestaudio/best',  # 音频格式
+    'supported_extensions': ['.mp3', '.flac', '.m4a', '.wav', '.aac']  # 支持的音频格式
 }
 
 # 加载用户配置文件
@@ -26,6 +38,7 @@ def load_user_config():
                 # 只更新下载位置配置
                 if 'download_location' in user_config:
                     DOWNLOAD_CONFIG['download_location'] = user_config['download_location']
+                    DOWNLOAD_CONFIG['target_dir'] = user_config['download_location']  # 同步更新target_dir
         except Exception:
             pass  # 如果加载失败，使用默认配置
 
@@ -50,6 +63,7 @@ def is_download_location_valid():
 def update_download_location(new_path):
     if os.path.isdir(new_path) and os.access(new_path, os.W_OK):
         DOWNLOAD_CONFIG['download_location'] = new_path
+        DOWNLOAD_CONFIG['target_dir'] = new_path  # 同步更新target_dir
         save_config()
         return True
     return False
@@ -66,15 +80,6 @@ THREAD_CONFIG = {
     'max_workers': 5,  # 默认最大线程数
     'timeout': 300,    # 任务超时时间(秒)
     'task_timeout': 120,  # 单个任务超时时间(秒)
-}
-
-# 日志配置
-LOG_CONFIG = {
-    'log_dir': os.path.join(BASE_DIR, "logs"),
-    'log_level': 'INFO',
-    'log_format': '%(asctime)s - %(levelname)s - %(message)s',
-    'max_bytes': 10 * 1024 * 1024,  # 10MB
-    'backup_count': 5
 }
 
 # API配置

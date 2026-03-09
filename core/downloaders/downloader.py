@@ -69,7 +69,6 @@ class BaseDownloader:
             'no_warnings': True,     # 隐藏警告
             'noprogress': True,      # 隐藏进度条
             'no_color': True,        # 禁用颜色输出
-            'cookiefile': self.cookie_path,
             # 网络超时控制
             'socket_timeout': 30,    # Socket超时30秒
             'retries': 3,           # 网络重试次数
@@ -80,6 +79,12 @@ class BaseDownloader:
                 'file_access': lambda n: 2 ** n,  # 文件访问重试延迟
             }
         }
+        
+        # 仅在cookie文件存在时才添加cookie配置
+        if self.cookie_path and os.path.exists(self.cookie_path):
+            options['cookiefile'] = self.cookie_path
+        else:
+            print(f"⚠️ Cookie文件不存在: {self.cookie_path}")
         
         # 添加进度钩子（如果提供）
         if progress_hook:
@@ -112,9 +117,9 @@ class MusicDownloader(BaseDownloader):
         if not self.target_dir or not os.path.exists(self.target_dir):
             errors.append("❌ 下载目录未指定或不存在")
         
-        # 检查Cookie文件
+        # 检查Cookie文件 - 不再强制要求存在
         if not self.cookie_path or not os.path.exists(self.cookie_path):
-            errors.append("❌ Cookie文件未指定或不存在")
+            print("⚠️ Cookie文件未指定或不存在，部分功能可能受限")
         
         if errors:
             print("配置检查发现问题:")
