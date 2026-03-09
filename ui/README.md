@@ -87,7 +87,4 @@ python -m ui.gui
 - **布局管理**: QVBoxLayout, QHBoxLayout, QGridLayout
 - **动画效果**: QPropertyAnimation, QSequentialAnimationGroup
 - **信号槽机制**: PyQt6信号与槽
-
-## 测试
-
-GUI模块包含了单元测试，位于[test_gui.py](./test_gui.py)，使用Python的unittest框架编写。
+  
