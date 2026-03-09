@@ -3,7 +3,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from config.settings import THREAD_CONFIG
 from utils.logger import log_failure, update_stats
-from core.downloader import MusicDownloader
+from core.downloaders.downloader import MusicDownloader
 
 class MultithreadDownloader:
     """多线程下载器 - 支持并发下载"""
