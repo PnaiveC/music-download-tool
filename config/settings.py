@@ -17,7 +17,7 @@ LOG_CONFIG = {
 DOWNLOAD_CONFIG = {
     'target_dir': os.path.expanduser("~/Music"),  # 目标下载目录 - 为兼容旧代码添加
     'download_dir': os.path.expanduser("~/Music"),  # 默认下载目录
-    'cookie_path': os.path.join(BASE_DIR, "config", "cookie.txt"),  # Cookie文件路径 - 使用绝对路径
+    'cookie_path': os.path.join(BASE_DIR, "config", "cookie.txt"),  # Cookie文件路径 - 使用相对路径
     'max_retries': 3,  # 最大重试次数
     'concurrent_limit': 5,  # 并发下载限制
     'min_delay': 1,  # 下载最小延迟（秒）
@@ -80,6 +80,15 @@ THREAD_CONFIG = {
     'max_workers': 5,  # 默认最大线程数
     'timeout': 300,    # 任务超时时间(秒)
     'task_timeout': 120,  # 单个任务超时时间(秒)
+}
+
+# 日志配置
+LOG_CONFIG = {
+    'log_dir': os.path.join(BASE_DIR, "logs"),
+    'log_level': 'INFO',
+    'log_format': '%(asctime)s - %(levelname)s - %(message)s',
+    'max_bytes': 10 * 1024 * 1024,  # 10MB
+    'backup_count': 5
 }
 
 # API配置

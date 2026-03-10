@@ -9,9 +9,7 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from PyQt6.QtWidgets import (
-    QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel,
-    QPushButton, QTextEdit, QScrollArea, QLineEdit, QProgressBar, QFrame,
-    QMenuBar, QMenu, QSizePolicy, QToolButton, QDialog, QListWidget, QListWidgetItem,
+    QMainWindow, QWidget, QVBoxLayout,
     QMessageBox, QFileDialog
 )
 from PyQt6.QtCore import Qt

@@ -1,13 +1,11 @@
-# 字节编译 / 优化 / DLL 文件
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C 扩展
 *.so
-
-# 发行版 / 打包
 .Python
+
+# Distribution / packaging
 build/
 develop-eggs/
 dist/
@@ -24,16 +22,70 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
+*.spec
 
-# 安装器日志
-pip-log.txt
-pip-delete-this-directory.txt
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
 
-# 翻译文件
+# Translations
 *.mo
 *.pot
 
-# 环境变量文件
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
 .env
 .venv
 env/
@@ -42,36 +94,32 @@ ENV/
 env.bak/
 venv.bak/
 
-# IDE 相关
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# 项目特定忽略项
-# Cookie 文件（包含敏感的身份验证数据）
-cookies_*.txt
-/config/cookie.txt
-# 下载的音乐文件
-downloads/
-music/
-*.mp3
-*.flac
-*.wav
-*.m4a
-
-# 日志文件
-logs/
-*.log
-
-# 临时文件
-tmp/
-temp/
-*.tmp
-tests/
-
-# 操作系统生成的文件
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -80,11 +128,34 @@ tests/
 ehthumbs.db
 Thumbs.db
 
-# 编辑器备份文件
+# Application specific
+# Cookie files (containing sensitive authentication data)
+cookies_*.txt
+/config/cookie.txt
+# Downloaded music files
+downloads/
+music/
+*.mp3
+*.flac
+*.wav
+*.m4a
+
+# Logs
+logs/
+*.log
+
+# Temp files
+tmp/
+temp/
+*.tmp
+tests/
+
+# Editor backup files
 *~
 .*.sw[op]
 *.bak
 *.orig
 
+# Project specific
 config/local_settings.py
 .local

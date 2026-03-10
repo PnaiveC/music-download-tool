@@ -3,8 +3,6 @@
 对话框模块，包含各种弹窗对话框
 """
 
-import sys
-import os
 from PyQt6.QtWidgets import (
     QDialog, QMessageBox, QTextEdit, QScrollArea, QVBoxLayout, QHBoxLayout, 
     QLabel, QPushButton, QWidget, QFileDialog
@@ -71,7 +69,7 @@ class HelpDialog(QDialog):
           <li>请确保Cookie文件有效，否则可能无法下载</li>
           <li>请确保下载位置有效且具有写入权限</li>
           <li>输入歌曲ID时，请确保格式正确（如：004R7qfh1ALctJ）</li>
-          <li>下载大量音乐时，请确保有足够的存储空间</li>
+          <li>默认下载能下载到的最高音质,下载大量音乐时，请确保有足够的存储空间</li>
           <li>请遵守相关法律法规，仅用于个人学习和备份</li>
           <li>如果遇到下载失败，请检查网络连接和Cookie有效性</li>
         </ul>
@@ -79,7 +77,7 @@ class HelpDialog(QDialog):
         <p><strong>常见问题：</strong></p>
         <ul>
           <li>Q: 为什么有些歌曲下载失败？</li>
-          <li>A: 可能由于版权原因或Cookie过期导致，尝试更新Cookie后重试,另外,对于VIP歌曲的下载,你需要至少有一天的VIP权限</li>
+          <li>A: 可能由于版权原因或Cookie过期导致，尝试更新Cookie后重试,另外,对于VIP歌曲的下载,必须配置cookie且至少有一天的VIP权限</li>
           <li>Q: 如何获取歌曲ID？</li>
           <li>A: 在QQ音乐网站播放歌曲时，地址栏URL中通常包含歌曲ID，歌单同理</li>
           <li>Q: 下载的音乐保存在哪里？</li>
@@ -127,7 +125,7 @@ class CookieConfigDialog(QMessageBox):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setWindowTitle("配置Cookie")
-        self.setText("Cookie文件是你通过QQ音乐下载音乐的凭证<br/>若没有或已过期，您需前往官网获取。")
+        self.setText("Cookie文件是你通过QQ音乐下载更多音乐的凭证<br/>若没有或已过期，您需前往官网获取。")
         self.setInformativeText("是否现在配置Cookie文件？")
         self.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
         self.setDefaultButton(QMessageBox.StandardButton.Yes)
@@ -167,12 +165,12 @@ class AgreementDialog(QDialog):
         <div style="font-size: 12px; font-weight: bold;">
         <p>本产品仅供学习使用，切勿用于非法用途。</p>
         <br>
-        <p><strong>功能：</strong>支持下载歌单内所有歌曲 / 单曲（请结合 README 摘要）。</p>
+        <p><strong>功能：</strong>支持下载歌单内所有歌曲 / 单曲。</p>
         <br>
         <p><strong>其他注意事项：</strong></p>
         <ul>
           <li>本工具仅支持QQ音乐平台的音乐下载</li>
-          <li>使用过程中请确保您的Cookie文件有效</li>
+          <li>下载特殊歌曲时请确保您的Cookie文件有效</li>
           <li>使用过程中请确保下载位置有效且具有写入权限</li>
           <li>下载大量音乐时请注意网络状况和存储空间</li>
           <li>请遵守相关法律法规，合理使用本工具</li>
