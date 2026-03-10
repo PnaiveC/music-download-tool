@@ -79,11 +79,11 @@ class HelpDialog(QDialog):
         <p><strong>常见问题：</strong></p>
         <ul>
           <li>Q: 为什么有些歌曲下载失败？</li>
-          <li>A: 可能由于版权原因或Cookie过期导致，尝试更新Cookie后重试</li>
+          <li>A: 可能由于版权原因或Cookie过期导致，尝试更新Cookie后重试,另外,对于VIP歌曲的下载,你需要至少有一天的VIP权限</li>
           <li>Q: 如何获取歌曲ID？</li>
-          <li>A: 在QQ音乐网站播放歌曲时，地址栏URL中通常包含歌曲ID</li>
+          <li>A: 在QQ音乐网站播放歌曲时，地址栏URL中通常包含歌曲ID，歌单同理</li>
           <li>Q: 下载的音乐保存在哪里？</li>
-          <li>A: 默认保存在配置文件中指定的目录，默认为 'C:\\Users\\Prologue\\Music'</li>
+          <li>A: 保存在配置文件中指定的目录</li>
           <li>Q: 为什么点击下载时提示配置下载位置？</li>
           <li>A: 请检查是否设置了有效的下载位置，可通过"配置"->"下载位置"进行设置</li>
         </ul>

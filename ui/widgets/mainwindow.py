@@ -61,10 +61,10 @@ class MainWindow(QMainWindow):
             if not os.path.exists(cookie_path):
                 os.makedirs(os.path.dirname(cookie_path), exist_ok=True)
                 with open(cookie_path, 'w', encoding='utf-8') as f:
-                    f.write("# QQ音乐Cookie文件\n")
+                    f.write("# Netscape HTTP Cookie File\n")
                     f.write("# 请在此处粘贴您的Cookie信息\n")
                     f.write("# 示例格式:\n")
-                    f.write("# music.32db8f981f.jsdkldfjlsdjflsdjflsdjflsdjf\n")
+                    f.write("# .y.qq.com	TRUE	/	TRUE	2147483647	wxuin	yours123\n")
             
             # 使用系统默认编辑器打开文件
             try:
