@@ -52,7 +52,7 @@ venv.bak/
 # 项目特定忽略项
 # Cookie 文件（包含敏感的身份验证数据）
 cookies_*.txt
-
+/config/cookie.txt
 # 下载的音乐文件
 downloads/
 music/
